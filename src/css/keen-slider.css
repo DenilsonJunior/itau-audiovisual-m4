@@ -1,0 +1,66 @@
+.navigation-wrapper {
+    position: relative;
+}
+
+.navigation-wrapper .keen-slider .keen-slider__slide .cardView {
+    width: calc(100% - 35em);
+    margin: 0 auto;
+}
+
+.navigation-wrapper .keen-slider .keen-slider__slide .cardView img {
+    display: block;
+    margin: 0 auto;
+}
+
+.navigation-wrapper .keen-slider .keen-slider__slide .cardView h3 {
+    text-transform: initial;
+    font-weight: 600;
+    font-size: 2em;
+    margin: 1em 0 .2em;
+    line-height: 1.5;
+}
+
+.navigation-wrapper .arrow {
+    width: 9em;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: calc(50% - 5em);
+    cursor: pointer;
+    background-image: url("../assets/images/arrow-slider.svg");
+    background-size: 100%;
+    background-position: center;
+    background-color: #EC7504;
+}
+
+.navigation-wrapper .arrow.arrow--left {
+    left: 0;
+}
+
+.navigation-wrapper .arrow.arrow--disabled {
+    background-color: #fff;
+    pointer-events: none;
+}
+
+.navigation-wrapper .arrow.arrow--right {
+    right: 0;
+    transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 1200px) {
+    .navigation-wrapper .keen-slider .keen-slider__slide .cardView {
+        width: calc(100% - 24em);
+    }
+    .navigation-wrapper .arrow {
+        width: 8em;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .navigation-wrapper .keen-slider .keen-slider__slide .cardView {
+        width: calc(100% - 5em);
+    }
+    .navigation-wrapper .arrow {
+        width: 5em;
+        top: 24%;
+    }
+}

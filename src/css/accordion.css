@@ -1,0 +1,123 @@
+.accordion-container {
+    width: 100%;
+    margin: 2em auto 0;
+}
+
+.accordion-item {
+    border: 3px solid #000; 
+    border-bottom: none; 
+}
+
+.accordion-item:last-child {
+    border-bottom: 3px solid #000;
+}
+
+.accordion-button {
+    background-color: #24366E;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    border: none; 
+    text-align: left;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-button:focus,
+.accordion-button:active {
+    outline: none !important;
+    border: none !important; 
+}
+
+.accordion-button.active {
+    border-bottom: none; 
+}
+
+.accordion-content {
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border: none; 
+    /* border-top: 3px solid #000; */
+}
+
+.accordion-button.active + .accordion-content {
+    border-top: 3px solid #000; 
+}
+
+.accordion-button p {
+    margin: 0;
+    color: #fff;
+    padding: 0 2em;
+    font-size: 1.6em;
+}
+
+.accordion-button .indicator {
+    width: 3.5em;
+    aspect-ratio: 1/1;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-left: solid 3px #000; */
+}
+
+.accordion-button .indicator p {
+    color: #000;
+    font-size: 2.5em;
+    transition-duration: .3s;
+    margin: 0;
+    line-height: .6;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.accordion-content .boxView {
+    padding: 3em;
+    display: flex;
+    align-items: center;
+    gap: 4em;
+}
+
+.accordion-content img {
+    width: 20em;
+    padding: 2em;
+}
+
+.accordion-content .boxText {
+    width: calc(100% - 20em);
+}
+
+.accordion-content .boxText h4 {
+    font-size: 2.1em;
+    font-weight: 600;
+}
+
+.indicator {
+    font-size: 1.2em;
+    transition: transform 0.3s;
+}
+
+.accordion-button.active .indicator p {
+    transform: rotate(405deg);
+}
+
+.accordion-button.visited {
+    background-color: #ED7504;
+}
+
+@media only screen and (max-width: 768px) {
+    .accordion-content .boxView {
+        flex-direction: column;
+    }
+    .accordion-content img {
+        padding: 0;
+        width: 15em;
+    }
+    .accordion-content .boxText {
+        width: 100%;
+    }
+}

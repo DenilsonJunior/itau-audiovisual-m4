@@ -1,0 +1,95 @@
+<div id="wrapper">
+    <header id="new-header">
+        <div class="container h-100">
+            <div class="row h-100 justify-content-between justify-content-md-start align-items-center">
+                <div class="col-2 col-md-1 d-flex"><button class="bt-sumario"></button></div>
+                <div class="col-4 col-md-auto h-lg-100 d-flex mh-100 order-1">
+                    <div class="logo"><img src="../../src/assets/images/custom/logoFundacaoItauEscola.svg" alt="Logo Fundação Itau - Escola"></div>
+                </div>
+                <div class="col-12 col-md d-flex flex-column align-content-start justify-content-center mh-100 order-3 order-md-2"></div>
+                <div class="col-auto d-flex align-items-end order-2 order-md-3">
+                    <div class="row flex-column flex-lg-row align-items-end">
+                        <ul id="tools" class="col-auto">
+                            <li><button id="contrast">Alto Contraste</button></li>
+                            <li><button id="marcaTexto">Marca Texto</button></li>
+                            <li><button class="bt-insere-postit" id="postit">Anotações</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="sumario" class="container p-0">
+        <div class="container"><button id="bt-sumario"><i><img src="../../src/assets/images/icos/ico-sumario.svg" alt="ícone sumário"> </i><span>Menu</span></button>
+            <ul class="sumario-content"><button id="close-sumario" class="bt-sumario"></button></ul>
+        </div>
+    </div>
+    <div id="progresso-aula" class="container p-0">
+        <div class="progresso-content">
+            <div class="txt-intro-progresso">Você já viu</div>
+            <div class="pct-progresso-aula">0%</div>
+        </div>
+    </div>
+    <div id="tools-content" class="container p-0">
+        <div class="container">
+            <div class="bts-tools-content"><button id="bt-highlights-list" class="bt-tools-content" data-tool="highlight"><i><img src="../../src/assets/images/icos/ico-highlight-list-2.svg" alt="ícone meus destaques"> </i><span>Meus destaques</span><div class="tool-count d-none">0</div></button>                <button id="bt-postits-list" class="bt-tools-content" data-tool="postits"><i><img src="../../src/assets/images/icos/ico-postits-list-2.svg" alt="ícone meus postits"> </i><span>Meus Postits</span><div class="tool-count d-none">0</div></button></div>
+            <div
+                class="tools-content empty inativo" data-tool="highlight">
+                <div class="empty-message">
+                    <p class="h2">Não há nada aqui.</p>
+                    <p>Selecione trechos que considerar importantes para auxiliar em seus estudos. Utilize a ferramenta marca-texto no menu superior e selecione o texto desejado.</p>
+                </div><button class="close-tools" data-button="#bt-highlights-list">Fechar</button>
+                <div class="highlight-content tools-content-list">
+                    <div class="cards"></div>
+                </div>
+        </div>
+        <div class="tools-content empty inativo" data-tool="postits">
+            <div class="empty-message">
+                <p class="h2">Não há nada aqui.</p>
+                <p>Crie anotações para auxiliar em seus estudos. Utilize a ferramenta "Anotações" no menu superior para isso.</p>
+            </div><button class="close-tools" data-button="#bt-postits-list">Fechar</button>
+            <div class="postits-content tools-content-list">
+                <div class="cards"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container bg-content">
+    <div class="detalhes-fundo"></div>
+</div>
+<div id="content" class="container"></div>
+<div class="seta-topo"><button id="botao-topo"><div class="txt-seta-topo">Voltar ao topo</div></button></div>
+<footer>
+    <div class="container h-100 pt-1 locucao-player inativo" id="locucaoPlayer">
+        <div class="progresso-audio">
+            <div class="barra-progresso"></div>
+        </div>
+        <div class="row row-locucao justify-content-center justify-content-md-center flex-md-nowrap">
+            <div class="col-5 col-md-auto pipe-div flex-row-reverse order-6 order-md-1">
+                <div class="item-locucao"><input id="ouvir-texto" type="checkbox" class="base-slider item-locucao-ouvir-texto"> <label for="ouvir-texto"><span>Ouvir Texto</span></label></div><label class="txt-locucao">Ouvir Texto</label></div>
+            <div class="col-1 col-md-auto p-0 pipe-col order-2 order-md-2"></div>
+            <div class="col-5 col-md-auto pipe-div flex-md-row order-1 order-md-3"><button class="progresso-locucao-bt progresso-locucao-bt-menos"></button>
+                <div class="txt-locucao progresso-locucao">00:00 / 00:00</div><button class="progresso-locucao-bt progresso-locucao-bt-mais"></button></div>
+            <div class="col-auto d-none d-md-block p-0 pipe-col order-7 order-md-4"></div>
+            <div class="col-5 col-md-2 pipe-div order-4 order-md-5">
+                <div class="item-locucao item-locucao-volume">
+                    <div class="base-slider">
+                        <div class="slider-volume">
+                            <div class="slidecontainer"><button class="bt-transp-slider bt-transp-slider-left">Diminuir volume</button> <input type="range" min="0" max="100" value="100" class="slider" id="volumeRange"> <button class="bt-transp-slider bt-transp-slider-right">Aumentar volume</button></div>
+                        </div>
+                    </div>
+                </div><label class="txt-locucao" for="slider-1">Volume</label></div>
+            <div class="col-1 col-md-auto p-0 pipe-col order-5 order-md-6"></div>
+            <div class="col-5 col-md-2 pipe-div velocidade-col order-3 order-md-7">
+                <div class="item-locucao item-locucao-velocidade">
+                    <div class="base-slider">
+                        <div class="slider-velocidade">
+                            <div class="slidecontainer"><button class="bt-transp-slider bt-transp-slider-left">Diminuir velocidade</button> <input type="range" min="0" max="100" value="50" step="10" class="slider" id="velocidadeRange"> <button class="bt-transp-slider bt-transp-slider-right">Aumentar velocidade</button></div>
+                        </div>
+                    </div>
+                </div><label class="txt-locucao" for="slider-2">Velocidade do áudio</label></div>
+        </div>
+    </div>
+</footer>
+</div>
+<div class="popup" data-tema="popup-mapa" id="mapa" data-largura="400"></div>

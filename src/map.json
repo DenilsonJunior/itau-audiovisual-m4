@@ -1,0 +1,40 @@
+{
+  "scorm":{
+    "organizationTitle": "Percurso nas artes para professores: Inteligência Artificial",
+    "itemTitle": "Desafios técnicos da implementação da Inteligência Artificial"
+  },
+  "curso": {
+    "titulo": "Percurso nas artes para professores: Inteligência Artificial",
+    "aula": "Desafios técnicos da implementação da Inteligência Artificial",
+    "path": "src/views/",
+    "conteudo": {
+      "telas": [
+        {
+          "url": "sec00.html",
+          "tipo": "capa",
+          "titulo": "Capa"
+        },
+        {
+          "url": "sec01.html",
+          "tipo": "cheia",
+          "titulo": "Apresentação"
+        },
+        {
+          "url": "sec02.html",
+          "tipo": "cheia",
+          "titulo": "A matemática encontra a música"
+        },
+        {
+          "url": "sec03.html",
+          "tipo": "cheia",
+          "titulo": "Grécia Antiga: o nascimento da teoria musical e das proporções matemáticas​​"
+        },
+        {
+          "url": "sec04.html",
+          "tipo": "cheia",
+          "titulo": "A Idade Média: sistemas numéricos e música modal"
+        }
+      ]
+    }
+  }
+}

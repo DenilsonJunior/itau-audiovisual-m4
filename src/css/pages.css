@@ -1,0 +1,172 @@
+p {
+    line-height: 1.5;
+    text-wrap: pretty;
+}
+
+#tela-1 {
+    background-color: #EC7105;
+}
+
+#tela-1 .flexCapa {
+    display: flex;
+}
+
+#tela-1 .flexCapa .boxText {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em 4em;
+}
+
+#tela-1 .flexCapa .boxText h3,
+#tela-1 .flexCapa .boxText h4,
+#tela-1 .flexCapa .boxText p {
+    color: #fff;
+    margin: 0;
+}
+
+#tela-1 .flexCapa .boxText h3 {
+    font-size: 3.5em;
+    font-weight: 400;
+}
+
+#tela-1 .flexCapa .boxText h4 {
+    font-weight: 400;
+}
+
+#tela-1 .flexCapa .boxText p {
+    font-weight: 600;
+    font-size: 3em;
+    line-height: 1.2;
+}
+
+#tela-1 .flexCapa img {
+    width: 50%;
+}
+
+#tela-1 .imagem-capa .texto-capa h4 {
+    color: #fff;
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) {
+    #tela-1 .flexCapa {
+        flex-direction: column;
+    }
+    #tela-1 .flexCapa .boxText {
+        width: 100%;
+        padding: 4em 7%;
+    }
+    #tela-1 .flexCapa img {
+        width: 100%;
+    }
+}
+
+#tela-2 .textBottom {
+    margin-top: 2em;
+}
+
+#tela-2 .limited .boxFlex {
+    display: flex;
+    gap: 4em;
+}
+
+#tela-2 .limited .boxFlex .left {
+    width: 60%;
+}
+
+#tela-2 .limited .boxFlex .left h3 {
+    font-weight: 600;
+}
+
+#tela-2 .limited .boxFlex .right {
+    width: 40%;
+}
+
+#tela-2 .limited .boxFlex .right img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    #tela-2 .limited .boxFlex {
+        flex-direction: column;
+        gap: 2em;
+    }
+    #tela-2 .limited .boxFlex .left {
+        width: 100%;
+    }
+    #tela-2 .limited .boxFlex .right {
+        width: 100%;
+    }
+}
+
+#tela-3 h3 {
+    font-weight: 600;
+    text-transform: initial;
+}
+
+#tela-3 .textOrange {
+    font-size: 2.5em;
+    margin: 1em 0 2em;
+    color: #EC7105;
+}
+
+#tela-4 h2 {
+    font-weight: 600;
+    color: #000;
+    margin-bottom: .5em;
+}
+
+#tela-4 .flexBox {
+    margin: 10em 0 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 4em;
+}
+
+#tela-4 .flexBox img {
+    width: 40%;
+    display: block;
+    object-fit: contain;
+}
+
+#tela-4 .flexBox .boxText {
+    width: 60%;
+}
+
+@media only screen and (max-width: 768px) {
+    #tela-4 .flexBox {
+        flex-direction: column;
+        margin: 5em 0 0;
+    }
+    #tela-4 .flexBox img {
+        width: 100%;
+    }
+    #tela-4 .flexBox .boxText {
+        width: 100%;
+    }
+}
+
+#tela-5 .bg-orange {
+    background-color: #ED7504;
+}
+
+#tela-5 .bg-orange h3 {
+    font-weight: 600;
+}
+
+#tela-5 .bg-orange h3,
+#tela-5 .bg-orange p {
+    color: #fff;
+}
+
+#tela-5 .bg-orange2 {
+    background-color: #FDF0E5;
+}
+
+#tela-5 .bg-orange2 img {
+    display: block;
+    margin: 0 auto 2em;
+    width: 100px;
+}
