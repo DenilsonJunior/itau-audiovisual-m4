@@ -1322,7 +1322,6 @@ body.mode-diagranacao .print-div .botao-ok span::before {
 }
 
 h3 {
-    font-family: "SimplonBP", sans-serif;
     color: #a6c83e;
     font-size: calc(2.5em + 1vw);
     font-weight: 100;
@@ -1346,7 +1345,6 @@ h4 {
 
 h4 {
     margin-bottom: 5px;
-    font-family: "SimplonBP", sans-serif;
     font-size: calc(1vw + .98231rem)
 }
 
@@ -1763,7 +1761,7 @@ h4 {
     position: absolute;
     top: -18px;
     left: 48px;
-    font-family: "SimplonBP", sans-serif;
+   
     color: #fff;
     font-size: 3.1em;
     text-transform: uppercase;
@@ -1785,7 +1783,7 @@ h4 {
 }
 
 .box-estante blockquote h3 {
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: calc(2em + .2vw);
     margin-bottom: 0
 }
@@ -2124,7 +2122,7 @@ h4 {
 .tabela-clean th {
     font-weight: 600;
     color: #fff;
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: 1.8em;
     background-color: #830046;
     border-left: 4px solid #fff;
@@ -2379,7 +2377,7 @@ h4 {
     font-weight: normal;
     line-height: 1;
     border-radius: 6px 6px 0 0;
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: 2.5em;
     color: #a4a3a3;
     border: 1px solid #a4a3a3;
@@ -2798,7 +2796,7 @@ h4 {
     color: red;
     display: inline-block;
     left: 0em;
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: 2em
 }
 
@@ -3145,7 +3143,7 @@ h4 {
 
 .sanfona .item-sanfona>.cont-botao p {
     color: #fff;
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: 2.7em;
     font-weight: 100;
     line-height: 1em;
@@ -3738,7 +3736,7 @@ h4 {
 }
 
 .pop .cont-popup .popup-content h4 {
-    font-family: "SimplonBP", sans-serif;
+   
     color: #666;
     font-size: calc(1.6em + 1.7vw);
     line-height: 1em
@@ -3944,7 +3942,7 @@ h4 {
 
 .pop.feedback.erro .cont-popup .popup-header .titulo h3,
 .pop.feedback.acerto .cont-popup .popup-header .titulo h3 {
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: calc(3em + .4vw);
     line-height: 1em;
     color: #fff;
@@ -4324,7 +4322,7 @@ h4 {
     display: table;
     color: #9b2f3e;
     text-decoration: none;
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: calc(2em + .8vw)
 }
 
@@ -5105,7 +5103,7 @@ table td {
     padding: 10px;
     color: #ec7000;
     font-size: 1.5em;
-    font-family: "SimplonBP", sans-serif;
+   
     text-align: center;
     font-weight: normal
 }
@@ -7220,7 +7218,7 @@ body {
 }
 
 p {
-    font-family: "SimplonBP", sans-serif;
+   
     font-size: 1.7em;
     line-height: 1.9em;
     margin-bottom: 10px;
@@ -8728,53 +8726,7 @@ body.carregando .pulsar {
     animation-delay: 5000ms !important
 }
 
-@font-face {
-    font-family: "Itau Display";
-    src: url("../assets/fonts//ItauDisplay-Light.woff2") format("woff2"), url("../assets/fonts//ItauDisplay-Light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap
-}
 
-@font-face {
-    font-family: "Itau Display";
-    src: url("../assets/fonts//ItauDisplay-Regular.woff2") format("woff2"), url("../assets/fonts//ItauDisplay-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-    font-family: "Itau Display";
-    src: url("../assets/fonts//ItauDisplay-Bold.woff2") format("woff2"), url("../assets/fonts//ItauDisplay-Bold.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-    font-family: "Itau Display";
-    src: url("../assets/fonts//ItauDisplay-XBold.woff2") format("woff2"), url("../assets/fonts//ItauDisplay-XBold.woff") format("woff");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-    font-family: "Itau Display";
-    src: url("../assets/fonts//ItauDisplay-Black.woff2") format("woff2"), url("../assets/fonts//ItauDisplay-Black.woff") format("woff");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap
-}
-
-@font-face {
-    font-family: "Itau Display";
-    src: url("../assets/fonts//ItauDisplay-Heavy.woff2") format("woff2"), url("../assets/fonts//ItauDisplay-Heavy.woff") format("woff");
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap
-}
 
 .border-image,
 .border-bottom,
@@ -8909,7 +8861,7 @@ header h2 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: "SimplonBP", sans-serif;
+   
     max-width: 100%;
     margin: 0;
     margin-right: 1em
@@ -8928,7 +8880,7 @@ header h2 {
 
 @media(max-width: 991.98px) {
     header {
-        height: 60px
+        height: 100px
     }
     header .tools-row,
     header .mod-row {
@@ -8982,7 +8934,7 @@ header h2 {
     display: flex;
     align-items: center;
     list-style: none;
-    font-family: "SimplonBP", sans-serif;
+   
     font-weight: 500
 }
 
@@ -9028,7 +8980,7 @@ header h2 {
     background-color: #a6c83e
 }
 
-#logo {
+/* #logo {
     position: absolute;
     top: 0;
     left: 22px;
@@ -9043,7 +8995,7 @@ header h2 {
 #logo img {
     max-width: 100%;
     max-height: 100%
-}
+} */
 
 #shortHeader {
     transform: translateY(-100%);
@@ -9246,7 +9198,16 @@ header h2 {
     margin-right: 10px;
     pointer-events: initial;
     transition: all .5s ease;
-    z-index: 1
+    z-index: 1;
+    overflow-y: auto;
+    border: 0.5rem solid #ec7504;
+}
+
+#tools-content .tools-content h4{
+    padding: 0.5rem 1rem;
+    font-size: 25px;
+    text-align: left;
+    color: #ec7504;
 }
 
 #tools-content .tools-content.inativo {
@@ -9324,7 +9285,7 @@ header h2 {
 }
 
 #tools-content .titulo-item {
-    color: #008d99;
+    color: #fe6610;
     font-weight: bold;
     font-size: 1.4em
 }
@@ -9367,7 +9328,7 @@ header h2 {
     font-weight: bold;
     left: 50%;
     top: 50%;
-    color: #5a5a5a;
+    color: #ec7504;
     text-indent: 0;
     transform: translate(-50%, -50%)
 }
@@ -9382,6 +9343,10 @@ header h2 {
 
 #marcaTexto {
     background-image: url(../../assets/images/icos/marcaTexto.svg)
+}
+
+#bt-menu{
+    background-image: url(../../assets/images/icos/ico-menu.svg)
 }
 
 .bt-insere-postit {
@@ -9409,7 +9374,7 @@ body.menu-ativo {
     border-radius: 0 0 12px 12px;
     background: #a6c83e;
     color: #fff;
-    font-family: "SimplonBP", sans-serif;
+   
     text-transform: uppercase;
     padding: 5px 15px;
     cursor: pointer;
@@ -9452,6 +9417,7 @@ body.menu-ativo {
     background: #1d1d1b
 }
 
+#menuBase,
 #sumario,
 #progresso-aula,
 #tools-content {
@@ -9468,6 +9434,7 @@ body.menu-ativo {
     overflow: hidden
 }
 
+#menuBase.ativo,
 #sumario.ativo,
 .ativo#progresso-aula,
 .ativo#tools-content {
@@ -9483,13 +9450,15 @@ body.menu-ativo {
 
 @media(max-width: 991.98px) {
     #sumario,
+    #menuBase,
     #progresso-aula,
     #tools-content {
-        top: 60px
+        top: 100px
     }
 }
 
 @media(min-width: 768px) {
+    .short-header #menuBase,
     .short-header #sumario,
     .short-header #progresso-aula,
     .short-header #tools-content {
@@ -9497,6 +9466,7 @@ body.menu-ativo {
     }
 }
 
+#menuBase .container,
 #sumario .container,
 #progresso-aula .container,
 #tools-content .container {
@@ -9506,6 +9476,7 @@ body.menu-ativo {
     height: 100%
 }
 
+#menuBase .container::before,
 #sumario .container::before,
 #progresso-aula .container::before,
 #tools-content .container::before {
@@ -9518,6 +9489,7 @@ body.menu-ativo {
     background: #a6c83e
 }
 
+
 #sumario .sumario-content,
 #progresso-aula .sumario-content,
 #tools-content .sumario-content {
@@ -9526,13 +9498,14 @@ body.menu-ativo {
     margin: 0;
     margin-top: 10px;
     transform: translateX(-100%);
-    transition: all .6s ease;
+    /* transition: all .6s ease; */
     pointer-events: initial;
     width: fit-content;
     width: -moz-fit-content;
     white-space: nowrap;
     overflow-y: auto
 }
+
 
 #sumario .sumario-content li,
 #progresso-aula .sumario-content li,
@@ -9562,7 +9535,7 @@ body.menu-ativo {
     -moz-box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, .17);
     box-shadow: 0px -3px 3px 0px rgba(0, 0, 0, .17);
     color: #0c2d78;
-    font-family: "SimplonBP", sans-serif;
+   
     font-weight: 500;
     text-decoration: none;
     font-size: 1.2em;
@@ -9672,7 +9645,7 @@ body.menu-ativo {
     padding: 10px 0;
     line-height: 1;
     text-align: center;
-    font-family: "SimplonBP", sans-serif;
+   
     border-top: 2px solid #1d1d1b;
     border-bottom: 2px solid #1d1d1b;
     -webkit-box-shadow: 10px 13px 14px -8px rgba(0, 0, 0, .18);
@@ -9696,7 +9669,7 @@ body.menu-ativo {
 
 @media(max-width: 991.98px) {
     #wrapper {
-        padding-top: 60px
+        padding-top: 100px
     }
 }
 
@@ -9815,12 +9788,9 @@ body.menu-ativo {
 }
 
 .tela.tela-capa {
-    scroll-margin: 140px
+    /* scroll-margin: 440px */
 }
 
-.tela.tela-podcast {
-    min-height: calc(100vh - 150px)
-}
 
 .tela .tela-content {
     width: 100%
@@ -10160,7 +10130,7 @@ footer .container {
 }
 
 .txt-locucao {
-    font-family: "SimplonBP", sans-serif;
+   
     text-transform: uppercase;
     font-size: 1.3em;
     color: #5a5a5a;
@@ -10696,7 +10666,7 @@ body.contraste .tela-respire .miolo-tela {
     margin-top: 2px
 }
 
-@media(max-width: 767.98px) {
+@media(max-width: 991.98px) {
     #tools-content .bt-tools-content i {
         margin: 0 auto
     }
@@ -10723,6 +10693,7 @@ body.contraste .tela-respire .miolo-tela {
     display: none
 }
 
+#menuBase .container::before,
 #sumario .container::before,
 #tools-content .container::before,
 #progresso-aula .container::before {
@@ -10730,6 +10701,7 @@ body.contraste .tela-respire .miolo-tela {
     height: 2px
 }
 
+#menuBase .container .sumario-content,
 #sumario .container .sumario-content,
 #tools-content .container .sumario-content,
 #progresso-aula .container .sumario-content {
@@ -10740,12 +10712,40 @@ body.contraste .tela-respire .miolo-tela {
     background-color: #000
 }
 
+ #menuBase{
+    /* display: none; */
+    z-index: 9999999;
+}
+
+/*#menuBase.ativo {
+    display: flex;
+} */
+
+
+
+#menuBase .container .sumario-content{
+    position: absolute;
+    transform: translateX(100%);
+    transition: all .6s ease;
+    display: none;
+}
+
+#menuBase.ativo .container .sumario-content {
+    right: 0;
+    transform: translateX(0%);
+    transition: all .6s ease;
+    display: flex;
+    z-index: 99999;
+}
+
+#menuBase .container .sumario-content li,
 #sumario .container .sumario-content li,
 #tools-content .container .sumario-content li,
 #progresso-aula .container .sumario-content li {
     width: 100%
 }
 
+#menuBase .container .sumario-content li a,
 #sumario .container .sumario-content li a,
 #tools-content .container .sumario-content li a,
 #progresso-aula .container .sumario-content li a,
@@ -10770,6 +10770,7 @@ body.contraste .tela-respire .miolo-tela {
     width: 100%
 }
 
+#menuBase .container .sumario-content li a:hover,
 #sumario .container .sumario-content li a:hover,
 #tools-content .container .sumario-content li a:hover,
 #progresso-aula .container .sumario-content li a:hover,
@@ -10791,6 +10792,7 @@ body.contraste .tela-respire .miolo-tela {
     color: #ec7000
 }
 
+#menuBase .container .sumario-content li a.inativo,
 #sumario .container .sumario-content li a.inativo,
 #tools-content .container .sumario-content li a.inativo,
 #progresso-aula .container .sumario-content li a.inativo,
@@ -10803,6 +10805,7 @@ body.contraste .tela-respire .miolo-tela {
     color: #646363
 }
 
+#menuBase .container .sumario-content li.ativo a,
 #sumario .container .sumario-content li.ativo a,
 #tools-content .container .sumario-content li.ativo a,
 #progresso-aula .container .sumario-content li.ativo a,
@@ -10816,6 +10819,7 @@ body.contraste .tela-respire .miolo-tela {
     font-weight: 700
 }
 
+#menuBase .container .sumario-content li:last-child a,
 #sumario .container .sumario-content li:last-child a,
 #tools-content .container .sumario-content li:last-child a,
 #progresso-aula .container .sumario-content li:last-child a,
@@ -10828,6 +10832,7 @@ body.contraste .tela-respire .miolo-tela {
     border: 0
 }
 
+#menuBase .container .sumario-content #close-menu,
 #sumario .container .sumario-content #close-sumario,
 #tools-content .container .sumario-content #close-sumario,
 #progresso-aula .container .sumario-content #close-sumario {
@@ -10843,18 +10848,23 @@ body.contraste .tela-respire .miolo-tela {
     right: 15px
 }
 
+
 @media(max-width: 991.98px) {
     #sumario,
+    #menuBase,
     #tools-content,
     #progresso-aula {
         z-index: 105
     }
+    #menuBase .container .sumario-content,
     #sumario .container .sumario-content,
     #tools-content .container .sumario-content,
     #progresso-aula .container .sumario-content {
         padding: 15px 60px 20px 20px;
         width: 100%
     }
+
+    #menuBase .container .sumario-content #close-menu,
     #sumario .container .sumario-content #close-sumario,
     #tools-content .container .sumario-content #close-sumario,
     #progresso-aula .container .sumario-content #close-sumario {
@@ -12972,9 +12982,37 @@ a.required.link-required.clicou::after,
     }
 }
 
+#new-header .logoMinCultura {
+    position: relative;
+    height: 100%;
+    width: auto;
+    display: flex;
+}
+
+#new-header .logoMinCultura img {
+    width: 100%;
+    display: flex;
+    object-fit: contain;
+}
+
 #new-header .logo {
-    max-height: 60px;
+    position: relative;
+    height: 100%;
+    width: auto;
     display: flex
+}
+
+@media(max-width: 991.98px) {
+    #new-header .logoMinCultura, #new-header .logo {
+        height: inherit;
+    }
+}
+
+@media(max-width: 767.98px) {
+    #new-header .logoMinCultura,
+        #new-header .logo {
+            height: auto;
+        }
 }
 
 #new-header h1,
@@ -13044,6 +13082,11 @@ a.required.link-required.clicou::after,
     background-size: 85%
 }
 
+#new-header #bt-menu {
+    background-image: url('../assets/images/icos/ico-menu.svg');
+    background-size: contain;
+}
+
 @media(min-width: 768px) {
     .short-header #new-header h1,
     .short-header #new-header h2 {
@@ -13070,26 +13113,26 @@ a.required.link-required.clicou::after,
         padding: 0 15px
     }
     .short-header #new-header {
-        height: 60px
+        height: 100px
     }
     .short-header #new-header .logo img {
         max-height: 100%
     }
 }
 
-@media(max-width: 991.98px) {
+/* @media(max-width: 991.98px) {
     .short-header #sumario,
     .short-header #tools-content,
     .short-header #progresso-aula {
-        top: 60px
+        top: 100px
     }
-}
+} */
 
 @media(max-width: 767.98px) {
     .short-header #sumario,
     .short-header #tools-content,
     .short-header #progresso-aula {
-        top: 60px
+        top: 100px
     }
 }
 
@@ -14320,3 +14363,199 @@ body.contraste .seta-topo #botao-topo::after {
 .hidden{
     display: none;
 }
+
+.logo-container{
+    position: relative;
+    height: 100%;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .logo-container {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+}
+
+
+.modalMenuBase{
+    position: fixed;
+    z-index: 99999999;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.modalMenuBase.active {
+    display: block;
+}
+
+
+
+.modalMenuBase .menuBaseHit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(236, 112, 0, 0);
+    z-index: 0;
+}
+
+.modalMenuBase .menuBaseBg {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 90px);
+    top: 90px;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    pointer-events: none;
+}
+
+.short-header .modalMenuBase .menuBaseBg {
+    height: calc(100% - 60px);
+    top: 60px;
+}
+
+.modalMenuBase .menuBaseContainer {
+    position: absolute;
+    top: 90px;
+    right: 50%;
+    transform: translateX(50%);
+    /* transform: translateX(-50%); */
+    width: 100%;
+    height: calc(100% - 90px);
+    background: rgba(0, 0, 0, 0);
+    transition: background-color .3s, top .3s;
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 9999999;
+}
+
+
+.short-header .modalMenuBase .menuBaseContainer {
+    height: calc(100% - 60px);
+    top: 60px;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    border-top: 2px solid #fff;
+    padding: 30px 80px 30px 35px;
+    /* width: fit-content; */
+    background-color: #000;
+    overflow-y: auto;
+    
+}
+
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .close-menu{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='a' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62.12 62.12'%3E%3Cline x1='1.06' y1='1.06' x2='61.06' y2='61.06' style='fill:none; stroke:%23fff; stroke-width:3px;'/%3E%3Cline x1='61.06' y1='1.06' x2='1.06' y2='61.06' style='fill:none; stroke:%23fff; stroke-width:3px;'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    cursor: pointer;
+}
+
+@media (max-width:  767px) {
+
+    .short-header .modalMenuBase .menuBaseBg,
+    .short-header .modalMenuBase .menuBaseContainer {
+        height: calc(100% - 100px);
+        top: 100px;
+    }
+
+    .modalMenuBase .menuBaseContainer .menuBaseContainerInfo {
+        padding: 15px 60px 20px 20px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .mdoInfo{
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .mdoInfo h2 {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: left;
+    color: #fff;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .mdoInfo p {
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 37px;
+    text-align: left;
+    color: #ec7504;
+}
+
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .infoMenu{
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border-top: 3px solid #fff;
+    padding: 2rem 0;
+    cursor: pointer;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .infoMenu img {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .infoMenu h4 {
+    font-weight: normal;
+    font-size: 30px;
+    text-align: left;
+    color: #fff;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .infoMenu h4 span {
+    /* font-weight: 900; */
+    color: #ec7504;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .progresso-aula{
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border-top: 3px solid #fff;
+    padding: 2rem 0;
+}
+
+.modalMenuBase .menuBaseContainer .menuBaseContainerInfo .progresso-aula h4 {
+    font-weight: normal;
+    font-size: 30px;
+    text-align: left;
+    color: #fff;
+}
+
+

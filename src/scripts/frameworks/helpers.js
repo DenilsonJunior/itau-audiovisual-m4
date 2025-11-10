@@ -7,6 +7,7 @@ define([
   "components/tools/pdf.min",
   "components/tools/toolcard.min",
   "frameworks/jquery.mCustomScrollbar.min",
+
 ], function (n, t, o) {
   "use strict";
   var l = window.Tools || {};
@@ -49,10 +50,7 @@ define([
       ),
       n(t).on("setHighlight", function (t, o) {
         e(n("#bt-highlights-list .tool-count"), o.length),
-          e(
-            n(".menuBaseContainerInfo .infoMenuDestaque span"),
-            o.length || "0"
-          ),
+          e(n(".menuBaseContainerInfo .infoMenuDestaque span"), o.length || "0"),
           n(this).trigger("gravaTool", {
             tool: "highlight",
             val: o,

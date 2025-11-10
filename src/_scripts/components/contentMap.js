@@ -6,7 +6,7 @@ define(["jquery", "components/utils"], function (r, u) {
     var t =
       r(window).height() -
       (l.find(".sumario-content").offset().top - r(window).scrollTop());
-    l.find(".sumario-content").css("height", "100%");
+    l.find(".sumario-content").css("max-height", t);
   }
   ((c = function (t, o) {
     var i = "";
@@ -37,9 +37,7 @@ define(["jquery", "components/utils"], function (r, u) {
         (i = o[s].titulo)),
         (o[s].pgInicio = 0);
     r(document).mouseup(function (t) {
-      var o = r(
-        "#sumario .sumario-content, #bt-sumario, .bt-sumario, .modalMenuBase"
-      );
+      var o = r("#sumario .sumario-content, #bt-sumario, .bt-sumario");
       o.is(t.target) || 0 !== o.has(t.target).length || e.fechaSumario();
     }),
       this.obj.find("#bt-sumario").on("click", function () {

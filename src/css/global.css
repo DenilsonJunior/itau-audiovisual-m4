@@ -3,6 +3,8 @@
 /*FRAMEWORKS
 ----------------------------*/
 
+@import url("font.css");
+
 @import url("bootstrap.min.css");
 @import url("jquery.mCustomScrollbar.min.css");
 @import url("rSlider.min.css");
@@ -13,3 +15,4 @@
 @import url("keen-slider.css");
 @import url("flipcard.css");
 @import url("accordion.css");
+@import url("progressCicle.css");

@@ -6,15 +6,20 @@ define([
   "components/useScorm",
   "text!structure/index.html",
   "components/contentMap",
-  "components/contentMenu",
   "components/audioPlayer",
   "components/helpers",
   "frameworks/dialog.min",
   "frameworks/utils-aria.min",
   "components/tools/header",
   "frameworks/keen-slider.min",
-], function ($, interacoes, funcoes, aos, ScormDataManager) {
-  var listaTelas = [],
+], function (
+  jQuery, // o
+  interacoes, // t
+  funcoes, // i
+  aos, // a
+  ScormDataManager
+) {
+  var listaTelas = [], // n
     caminhoBase = "",
     contadorConteudoCarregado = 0,
     modoExibicao =
@@ -32,8 +37,8 @@ define([
   ];
   function Main() {
     // s
-    (this.template = $(require("text!structure/index.html"))),
-      $("body").append(this.template),
+    (this.template = jQuery(require("text!structure/index.html"))),
+      jQuery("body").append(this.template),
       (this.default_suspend_data = {
         visited: [],
         highlights: [],
@@ -115,23 +120,21 @@ define([
           };
       },
       configOnePage: function (dadosMapa) {
-        $(".menuBaseContainerInfo .mdoInfo h2").html(dadosMapa.curso.titulo);
-        $(".menuBaseContainerInfo .mdoInfo p").html(dadosMapa.curso.aula);
         // a
         if (
           (dadosMapa.curso.titulo &&
             (60 < dadosMapa.curso.titulo.length &&
-              $("#header h1").addClass("shrinkTitle"),
-            $("#header h1, #new-header h1").html(dadosMapa.curso.titulo),
+              jQuery("#header h1").addClass("shrinkTitle"),
+            jQuery("#header h1, #new-header h1").html(dadosMapa.curso.titulo),
             dadosMapa.curso.aula
-              ? $("#header h2, #new-header h2").html(dadosMapa.curso.aula)
-              : ($("#header h1, #new-header h1").attr(
+              ? jQuery("#header h2, #new-header h2").html(dadosMapa.curso.aula)
+              : (jQuery("#header h1, #new-header h1").attr(
                   "style",
                   "margin-bottom: 0 !important;"
                 ),
-                $("#header h2, #new-header h2").addClass("d-none"))),
+                jQuery("#header h2, #new-header h2").addClass("d-none"))),
           dadosMapa.curso.template &&
-            $("head").append(
+            jQuery("head").append(
               "<link rel='stylesheet' href='../../assets/css/" +
                 dadosMapa.curso.template +
                 ".min.css' type='text/css' media='screen'>"
@@ -153,27 +156,31 @@ define([
               indiceAula++
             ) {
               // e
-              let elementoAula = $("<li><span>" + indiceAula + "</span></li>"); // t
+              let elementoAula = jQuery(
+                "<li><span>" + indiceAula + "</span></li>"
+              ); // t
               indiceAula == dadosMapa.curso.progresso.aula_atual &&
                 elementoAula.addClass("ativo"),
-                $("#aulas").append(elementoAula);
+                jQuery("#aulas").append(elementoAula);
             }
           }
           if (dadosMapa.curso.progresso.modulos_total) {
-            var tituloListaModulos = $("<li class='titulo-lista'>Módulo</li>"); // s
-            $("#modulos").append(tituloListaModulos);
+            var tituloListaModulos = jQuery(
+              "<li class='titulo-lista'>Módulo</li>"
+            ); // s
+            jQuery("#modulos").append(tituloListaModulos);
             for (
               indiceAula = 0;
               indiceAula < dadosMapa.curso.progresso.modulos_total;
               indiceAula++
             ) {
               // e
-              let elementoModulo = $(
+              let elementoModulo = jQuery(
                 "<li><button>" + (indiceAula + 1) + "</button></li>"
               ); // t
               indiceAula == dadosMapa.curso.progresso.modulo_atual &&
                 elementoModulo.addClass("ativo"),
-                $("#modulos").append(elementoModulo);
+                jQuery("#modulos").append(elementoModulo);
             }
           }
         }
@@ -197,14 +204,14 @@ define([
               (listaTelas[i].status.active = !0);
           tela = new Tela(listaTelas[i], i); // t
           (listaTelas[i].tela = tela),
-            $(tela).on("fimTela", function (evento) {
+            jQuery(tela).on("fimTela", function (evento) {
               // t
               this.id < listaTelas.length - 1 &&
                 (listaTelas[this.id + 1].tela.ativaTela(),
                 cursoInstance.template.find("#content").addClass("seta-ativa")),
                 cursoInstance.setTelaCompleted(this.id);
             }),
-            $(tela).on("telaContentLoaded", function (evento) {
+            jQuery(tela).on("telaContentLoaded", function (evento) {
               // t
               cursoInstance.setContentLoaded(this.id);
             });
@@ -245,34 +252,32 @@ define([
           ++percentualAtual >= cursoInstance.pctProgresso &&
             ((percentualAtual = cursoInstance.pctProgresso),
             clearInterval(intervaloProgresso)),
-            $("#progresso-aula .pct-progresso-aula").html(
+            jQuery("#progresso-aula .pct-progresso-aula").html(
               percentualAtual + "%"
             );
-          $(".progresso-aula .ko-progresso-text").html(percentualAtual + "%");
-          $("[data-progress]").attr("data-progress", percentualAtual);
         }, 20);
       },
       setContentLoaded: function (idTela) {
         // t
         var cursoInstance = this; // s
         if (++contadorConteudoCarregado >= listaTelas.length) {
-          $("#header, #new-header").header(configuracoesGlobais),
-            $("#sumario").sumario(listaTelas, cursoInstance),
-            $("#sumario").on("navegaContent", function (e, idTela, s) {
+          jQuery("#header, #new-header").header(configuracoesGlobais),
+            jQuery("#sumario").sumario(listaTelas, cursoInstance),
+            jQuery("#sumario").on("navegaContent", function (e, idTela, s) {
               cursoInstance.navegaContent(idTela);
             }),
-            $("#locucaoPlayer").locucaoPlayer();
+            jQuery("#locucaoPlayer").locucaoPlayer();
           for (var i = 0; i < listaTelas.length; i++)
             // a
             listaTelas[i].tela.setTelaObject();
           this.checkScroll(),
-            $(this).trigger("contentLoaded"),
-            $("#content").tools({
+            jQuery(this).trigger("contentLoaded"),
+            jQuery("#content").tools({
               highlights: cursoInstance.suspend_data.highlights,
               postits: cursoInstance.suspend_data.postits,
-              wrapper: $("#wrapper"),
+              wrapper: jQuery("#wrapper"),
             }),
-            $("#content").on("gravaTool", function (e, dadosTool) {
+            jQuery("#content").on("gravaTool", function (e, dadosTool) {
               // t, a
               "highlight" == dadosTool.tool &&
                 (cursoInstance.suspend_data.highlights = dadosTool.val),
@@ -283,81 +288,81 @@ define([
                   btoa(JSON.stringify(cursoInstance.suspend_data))
                 );
             }),
-            $(".bt-insere-postit").on("click", function (e) {
+            jQuery(".bt-insere-postit").on("click", function (e) {
               // t
-              $("#content").tools(
+              jQuery("#content").tools(
                 "inserePostit",
                 listaTelas[cursoInstance.telaAtual].tela.tela
               );
             }),
-            $("#marcaTexto").on("click", function (e) {
+            jQuery("#marcaTexto").on("click", function (e) {
               // t
               e.preventDefault(),
-                $(this).toggleClass("ativo"),
-                $("#content").tools("habilitaHighlight");
+                jQuery(this).toggleClass("ativo"),
+                jQuery("#content").tools("habilitaHighlight");
             }),
-            $("#PDF").on("click", function (e) {
+            jQuery("#PDF").on("click", function (e) {
               // t
-              $("#content").tools("baixaPDF");
+              jQuery("#content").tools("baixaPDF");
             }),
-            $("#fontSize").on("click", function (e) {
+            jQuery("#fontSize").on("click", function (e) {
               // t
-              $("#content").tools("setFontSize");
+              jQuery("#content").tools("setFontSize");
             }),
-            $("#contrast").on("click", function (e) {
+            jQuery("#contrast").on("click", function (e) {
               // t
-              $("#content").tools("setContrast");
+              jQuery("#content").tools("setContrast");
             }),
-            $(".bt-sumario").on("click", function () {
-              $("#bt-sumario").trigger("click");
+            jQuery(".bt-sumario").on("click", function () {
+              jQuery("#bt-sumario").trigger("click");
             }),
-            $("#bt-menu").on("click", function () {
-              $("body").trigger("open-menu");
+            jQuery("#botao-topo").bind("click", function (e) {
+              // t
+              return (
+                jQuery("html, body").animate(
+                  {
+                    scrollTop: 0,
+                  },
+                  600
+                ),
+                !1
+              );
             }),
-            $(".close-menu, .menuBaseHit").on("click", function (e) {
-              $("body").trigger("closed-menu");
-            });
-          $("#botao-topo").bind("click", function (e) {
-            // t
-            return (
-              $("html, body").animate(
-                {
-                  scrollTop: 0,
-                },
-                600
-              ),
-              !1
-            );
-          }),
             this.iniciaTela(this.telaInicial),
             this.setProgress(),
-            $(window).scroll(),
+            jQuery(window).scroll(),
             this.telaInicial && this.navegaContent(this.telaInicial),
             ("diagramacao" != modoExibicao && "locucao" != modoExibicao) ||
-              (this.tema && $("#content").attr("data-tema", this.tema),
-              $("#content").tools("baixaPDF"));
+              (this.tema && jQuery("#content").attr("data-tema", this.tema),
+              jQuery("#content").tools("baixaPDF"));
         }
       },
       checkScroll: function () {
         var cursoInstance = this, // e
-          alturaHeader = $("header").outerHeight() + 15, // s
-          telas = $(".tela"); // i
-        $(window).scroll(function () {
+          alturaHeader = jQuery("header").outerHeight() + 15, // s
+          telas = jQuery(".tela"); // i
+        jQuery(window).scroll(function () {
           var posicaoScrollMedia =
-              $(this).scrollTop() + alturaHeader + $(window).height() / 2, // t
+              jQuery(this).scrollTop() +
+              alturaHeader +
+              jQuery(window).height() / 2, // t
             telasVisiveis = telas.map(function () {
               // a
               if (
-                ($(this).offset().top < posicaoScrollMedia ||
-                  ($(this).height() < $(window).height() / 2 &&
-                    (parseInt($(this).offset().top + $(this).height()),
-                    $(window).scrollTop(),
-                    $(window).height())),
-                ($(this).offset().top < posicaoScrollMedia ||
-                  ($(this).height() < $(window).height() / 2 &&
-                    parseInt($(this).offset().top + $(this).height()) <=
-                      $(window).scrollTop() + $(window).height())) &&
-                  !$(this).hasClass("locked"))
+                (jQuery(this).offset().top < posicaoScrollMedia ||
+                  (jQuery(this).height() < jQuery(window).height() / 2 &&
+                    (parseInt(
+                      jQuery(this).offset().top + jQuery(this).height()
+                    ),
+                    jQuery(window).scrollTop(),
+                    jQuery(window).height())),
+                (jQuery(this).offset().top < posicaoScrollMedia ||
+                  (jQuery(this).height() < jQuery(window).height() / 2 &&
+                    parseInt(
+                      jQuery(this).offset().top + jQuery(this).height()
+                    ) <=
+                      jQuery(window).scrollTop() + jQuery(window).height())) &&
+                  !jQuery(this).hasClass("locked"))
               )
                 return this;
             }),
@@ -391,14 +396,14 @@ define([
       setTela: function (idTela) {
         // t
         (this.telaAtual = idTela),
-          $("#content").tools(
+          jQuery("#content").tools(
             "setTelaAtual",
             idTela,
             listaTelas[idTela].titulo
           ),
           this.scormData.set("cmi.core.lesson_location", parseInt(idTela)),
-          $(this).trigger("initTela", idTela),
-          $("#sumario").sumario("initTela", idTela),
+          jQuery(this).trigger("initTela", idTela),
+          jQuery("#sumario").sumario("initTela", idTela),
           listaTelas[idTela].tela.tela.trigger("initTela");
         var urlFormatada = funcoes.formatURL(listaTelas[idTela].titulo); // a
         clearTimeout(window.intervaloScroll),
@@ -411,17 +416,17 @@ define([
       },
       navegaContent: function (idTela) {
         // t
-        $(".tela[data-id=" + idTela + "]")[0].scrollIntoView();
+        jQuery(".tela[data-id=" + idTela + "]")[0].scrollIntoView();
       },
     }),
     (Tela.prototype = {
       initTela: function (conteudo) {
         // t
-        (this.html = conteudo), $(this).trigger("telaContentLoaded");
+        (this.html = conteudo), jQuery(this).trigger("telaContentLoaded");
       },
       setTelaObject: function (t) {
         var telaInstance = this; // a
-        let elementoTela = $(
+        let elementoTela = jQuery(
           // e
           "<div class='tela' data-aos='fade-up-right'></div>"
         )
@@ -429,15 +434,15 @@ define([
           .attr("data-id", this.id)
           .attr("data-titulo", funcoes.formatURL(this.data.titulo))
           .addClass("tela-" + this.data.tipo)
-          .appendTo($("#content"));
+          .appendTo(jQuery("#content"));
         "dev" === modoExibicao || this.data.status.active
           ? "dev" == modoExibicao &&
             elementoTela.append(
               "<div class='tela-dev'>" + this.data.url + "</div>"
             )
-          : elementoTela.addClass("lockedRSS");
-        /// Remover esssa class para nao da problema no SLIDE - elementoTela.addClass("locked");
-        let conteudoTela = $(
+          : elementoTela.addClass("locked");
+        let conteudoTela = jQuery(
+          // s
           "<div class='tela-content d-flex align-items-center justify-content-center flex-column'></div>"
         );
         conteudoTela.html(this.html),
@@ -447,10 +452,11 @@ define([
           elementoTela.interacoes(configuracoesGlobais),
           elementoTela.locucao(),
           elementoTela.on("initTela", function () {
-            $(this).trigger("ativaTela");
+            jQuery(this).trigger("ativaTela");
           }),
           elementoTela.on("fimContentTela", function () {
-            $(telaInstance).trigger("fimTela"), telaInstance.completaTela();
+            jQuery(telaInstance).trigger("fimTela"),
+              telaInstance.completaTela();
           }),
           elementoTela.on("fimContentTela", function () {}),
           this.data.status.completed && this.completaTela(),
@@ -459,7 +465,7 @@ define([
       ativaTela: function () {
         this.tela.addClass("next-screen"),
           this.tela.removeClass("locked"),
-          $("#sumario").sumario("unlock", this.id);
+          jQuery("#sumario").sumario("unlock", this.id);
       },
       completaTela: function () {
         this.tela.addClass("completed");
