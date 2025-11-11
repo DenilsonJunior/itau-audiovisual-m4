@@ -153,7 +153,7 @@
     border-radius: 4px;
     z-index: 20;
     padding: 0 12px 12px 12px;
-    background: url(../../src/assets/images/barra-post-it.png) top left no-repeat #fff490
+    background: url(./src/assets/images/barra-post-it.png) top left no-repeat #fff490
 }
 
 @media only screen and (max-width: 767px) {
@@ -181,7 +181,7 @@
     width: 10px;
     height: 10px;
     display: block;
-    background: url(../../src/assets/images/fechar-postit.png) no-repeat;
+    background: url(./src/assets/images/fechar-postit.png) no-repeat;
     position: absolute;
     top: 5px;
     right: 5px
@@ -191,7 +191,7 @@
     width: 10px;
     height: 10px;
     display: block;
-    background: url(../../src/assets/images/minimizar-postit.png) no-repeat;
+    background: url(./src/assets/images/minimizar-postit.png) no-repeat;
     position: absolute;
     top: 5px;
     right: 20px
@@ -9276,7 +9276,7 @@ header h2 {
     height: 25px;
     border-radius: 50%;
     background-color: #fe6610;
-    background-image: url(../../src/assets/images/icos/delete-tool.svg);
+    background-image: url(./src/assets/images/icos/delete-tool.svg);
     background-position: center;
     background-size: 50%;
     background-repeat: no-repeat;

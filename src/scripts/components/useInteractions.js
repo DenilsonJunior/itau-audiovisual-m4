@@ -1879,7 +1879,7 @@ function sorteia(t) {
             t.html())
           : "popup-audio" == i
           ? ((n =
-              '<div class="botao-popup"><p>ouça a leitura</p><div class="ico"></div></div><audio class="box-audio"><source src="../src/assets/audio/' +
+              '<div class="botao-popup"><p>ouça a leitura</p><div class="ico"></div></div><audio class="box-audio"><source src="./src/assets/audio/' +
               e +
               '"type="audio/mpeg"></audio>'),
             t.html())
