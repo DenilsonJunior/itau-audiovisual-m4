@@ -5,7 +5,6 @@
   "scripts": {
     "server": "browser-sync start --server --files '**/*' --reload-delay 200",
     "bundle": "npm run build:css && npm run build:js && npm run build:compiler",
-    
     "build:css": "node src/build/r.js -o src/build/buildCSS.js",
     "build:js": "node src/build/r.js -o src/build/buildJS.js",
     "build:compiler": "node src/build/compiler.js"

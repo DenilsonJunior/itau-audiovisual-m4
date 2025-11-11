@@ -106,7 +106,17 @@ define(["jquery", "frameworks/keen-slider.min"], function ($, KeenSlider) {
         })
       }
 
-      var slider = new KeenSlider("#my-keen-slider", {}, [navigation])
+      //var slider = new KeenSlider("#my-keen-slider", {}, [navigation])
+
+      var slider = new KeenSlider("#my-keen-slider", {
+        // Desativa arrastar com mouse e touch
+        drag: false,
+        // outras opções que usar
+        loop: false,
+        defaultAnimation: { duration: 300 },
+        slides: { perView: 1, spacing: 10 },
+      }, [navigation]);
+
     },
     flipcard: function () {
       const flipCards = document.querySelectorAll('.flip-card');

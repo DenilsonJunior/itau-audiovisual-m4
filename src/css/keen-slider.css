@@ -64,3 +64,15 @@
         top: 24%;
     }
 }
+
+
+.keen-slider {
+    touch-action: none;
+    /* bloqueia gesto de arraste */
+}
+
+.keen-slider__slide {
+    user-select: text;
+    /* permite seleção */
+    -webkit-user-select: text;
+}
