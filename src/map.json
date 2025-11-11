@@ -1,11 +1,11 @@
 {
   "scorm":{
-    "organizationTitle": "Percurso nas artes para professores: Inteligência Artificial",
-    "itemTitle": "Desafios técnicos da implementação da Inteligência Artificial"
+    "organizationTitle": "Módulo 02 - Encerramento",
+    "itemTitle": "Audiovisual no Brasil: Governança e Ecossistema"
   },
   "curso": {
-    "titulo": "Percurso nas artes para professores: Inteligência Artificial",
-    "aula": "Desafios técnicos da implementação da Inteligência Artificial",
+    "titulo": "Módulo 02 - Encerramento",
+    "aula": "Audiovisual no Brasil: Governança e Ecossistema",
     "path": "src/views/",
     "conteudo": {
       "telas": [
@@ -17,22 +17,22 @@
         {
           "url": "sec01.html",
           "tipo": "cheia",
-          "titulo": "Apresentação"
+          "titulo": "O que ficou dessa jornada"
         },
         {
           "url": "sec02.html",
           "tipo": "cheia",
-          "titulo": "A matemática encontra a música"
+          "titulo": "Recapitulando"
         },
         {
           "url": "sec03.html",
           "tipo": "cheia",
-          "titulo": "Grécia Antiga: o nascimento da teoria musical e das proporções matemáticas​​"
+          "titulo": "Audiovisual no Brasil: Governança e Ecossistema Encerramento geral"
         },
         {
           "url": "sec04.html",
           "tipo": "cheia",
-          "titulo": "A Idade Média: sistemas numéricos e música modal"
+          "titulo": "Fique ligado(a)!"
         }
       ]
     }
