@@ -11,6 +11,10 @@ requirejs.config({
     "frameworks/jquery.mCustomScrollbar.min": {
       deps: ["jquery", "frameworks/jquery.mousewheel.min"],
     },
+    "frameworks/imagesloaded.pkgd.min": {
+      deps: ["jquery"],
+      exports: "imagesLoaded", // nome global que o script cria
+    },
     "components/utils": {
       deps: ["jquery"],
     },
@@ -65,9 +69,7 @@ requirejs.config({
     },
 
     "frameworks/keen-slider.min": {
-      deps: [
-        "jquery",
-      ],
+      deps: ["jquery"],
     },
 
     "app/main": {
@@ -77,6 +79,7 @@ requirejs.config({
         "components/useInteractions",
         "text!structure/index.html",
         "components/contentMap",
+        "components/contentMenu",
         "components/audioPlayer",
         "components/helpers",
         "components/useScorm",
@@ -90,10 +93,7 @@ requirejs.config({
     },
 
     "app/page": {
-      deps: [
-        "jquery",
-        "components/utils",
-      ],
+      deps: ["jquery", "components/utils"],
     },
   },
 }),
