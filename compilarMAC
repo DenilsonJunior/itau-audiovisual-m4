@@ -1,6 +1,0 @@
-BASEDIR=$(dirname "$0")
-cd "$BASEDIR"
-sudo killall -9 node
-sudo npm start
-
-

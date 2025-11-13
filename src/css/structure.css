@@ -9136,8 +9136,7 @@ header h2 {
 }
 
 #tools li button.ativo {
-    background-color: #0c2d78;
-    border: 1px solid #1d1d1b
+    /* border: 1px solid #ec7504; */
 }
 
 #tools li::after {

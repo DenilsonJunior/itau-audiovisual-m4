@@ -7,11 +7,13 @@ define([
   "components/tools/pdf.min",
   "components/tools/toolcard.min",
   "frameworks/jquery.mCustomScrollbar.min",
+
 ], function (n, t, o) {
   "use strict";
   var l = window.Tools || {};
   function e(t, o) {
-    0 < o ? (t.removeClass("d-none"), t.html(o)) : t.addClass("");
+    t.html(o ? o : "0");
+    // 0 < o ? (t.removeClass("d-none"), t.html(o)) : t.addClass("");
   }
   ((l = function (t, o) {
     var i = this,
@@ -49,22 +51,25 @@ define([
       ),
       n(t).on("setHighlight", function (t, o) {
         e(n("#bt-highlights-list .tool-count"), o.length),
-          e(
-            n(".menuBaseContainerInfo .infoMenuDestaque span"),
-            o.length || "0"
-          ),
+          e(n(".menuBaseContainerInfo .infoMenuDestaque span"), o.length || "0"),
           n(this).trigger("gravaTool", {
             tool: "highlight",
             val: o,
           });
       }),
       n(t).on("setPostit", function (t, o) {
+
+    
+        console.log("e", e);
+        console.log("total", o.length);
+
         e(n("#bt-postits-list .tool-count"), o.length),
           e(n(".menuBaseContainerInfo .infoMenuPost span"), o.length || "0"),
           n(this).trigger("gravaTool", {
             tool: "postit",
             val: o,
           });
+
       }),
       n("[data-tool]").on("click", function () {
         $("body").trigger("closed-menu");

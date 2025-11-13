@@ -71,6 +71,7 @@ body.contraste header h1,
 body.contraste header h2,
 body.contraste header .lista-aula li.titulo-lista,
 body.contraste h3,
+body.contraste h2,
 body.contraste p,
 body.contraste .sanfona .item-sanfona>.cont-texto .caixa-item,
 body.contraste .atividade .alternativas label,
@@ -618,7 +619,35 @@ body.contraste #bt-menu {
 body.contraste .accordion-button .indicator {
     background: #3d3c3c !important;
 }
+
+body.contraste #tela-5  *,
 body.contraste .bg-orange2 *, 
 body.contraste .accordion-content .boxText *{
     color: #000 !important;
+}
+
+
+body.contraste #tools-content .titulo-item {
+    color: #000 !important;
+    
+}
+
+body.contraste #tools-content .delete-tool-item {
+    background-color: #000 !important;
+}
+
+body.contraste .highlight-item p{
+    color: #000 !important;
+}
+
+body.contraste .highlighted {
+    background-color: #a9a974 !important;
+}
+
+body.contraste :focus,
+body.contraste button:focus,
+body.contraste input[type="radio"]:focus+label,
+body.contraste input[type="checkbox"]:focus+label {
+    box-shadow: #d2d2d2 0px 0px 0px 0.2rem !important;
+    outline: 0px;
 }
