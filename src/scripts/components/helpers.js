@@ -2,139 +2,193 @@ define([
   "jquery",
   "frameworks/jquery-ui.min",
   "components/utils",
-  "components/tools/postit.min",
-  "components/tools/highlight.min",
-  "components/tools/pdf.min",
-  "components/tools/toolcard.min",
+  "components/tools/postit",
+  "components/tools/highlight",
+  "components/tools/pdf",
+  "components/tools/toolcard",
   "frameworks/jquery.mCustomScrollbar.min",
-
-], function (n, t, o) {
+], function ($, jQueryUI, utils) {
   "use strict";
-  var l = window.Tools || {};
-  function e(t, o) {
-    t.html(o ? o : "0");
-    // 0 < o ? (t.removeClass("d-none"), t.html(o)) : t.addClass("");
+  var ToolsManager = window.Tools || {};
+
+  /**
+   * Atualiza o contador de ferramentas na interface.
+   * @param {jQuery} element - Elemento jQuery onde o contador será exibido.
+   * @param {number|string} count - O número de itens a ser exibido.
+   */
+  function updateToolCount(element, count) {
+    element.html(count ? count : "0");
+    // 0 < count ? (element.removeClass("d-none"), element.html(count)) : element.addClass("");
   }
-  ((l = function (t, o) {
-    var i = this,
-      s = {
+
+  /**
+   * Construtor do ToolsManager.
+   * @param {HTMLElement} element - O elemento DOM principal onde as ferramentas serão aplicadas.
+   * @param {object} options - Opções de configuração.
+   */
+  ((ToolsManager = function (element, options) {
+    var self = this,
+      defaultSettings = {
         highlights: [],
         postits: [],
-        fontSize: (parseInt(n("body").css("font-size")) / 16) * 100,
+        fontSize: (parseInt($("body").css("font-size")) / 16) * 100,
       };
-    (this.settings = n.extend(!0, s, o)),
+
+    (this.settings = $.extend(!0, defaultSettings, options)),
       (this.fontSize = this.settings.fontSize),
-      (this.element = t),
-      n(t).highlights({
-        list: n("#tools-content .highlight-content"),
+      (this.element = element),
+      // Inicializa a ferramenta de Highlights
+      $(element).highlights({
+        list: $("#tools-content .highlight-content"),
         parser: ".tela",
-        highlights: i.settings.highlights,
+        highlights: self.settings.highlights,
       }),
-      n(t).postits({
-        list: n("#tools-content .postits-content"),
+      // Inicializa a ferramenta de Postits
+      $(element).postits({
+        list: $("#tools-content .postits-content"),
         parser: ".tela",
-        postits: i.settings.postits,
+        postits: self.settings.postits,
       }),
-      n(t).PDF(o.wrapper),
-      e(
-        n("#bt-highlights-list .tool-count"),
-        i.settings.highlights.length || 0
+      // Inicializa a ferramenta de PDF
+      $(element).PDF(options.wrapper),
+      // Atualiza contadores iniciais
+      updateToolCount(
+        $("#bt-highlights-list .tool-count"),
+        self.settings.highlights.length || 0
       ),
-      e(n("#bt-postits-list .tool-count"), i.settings.postits.length),
-      e(
-        n(".menuBaseContainerInfo .infoMenuDestaque span"),
-        i.settings.highlights.length || "0"
+      updateToolCount(
+        $("#bt-postits-list .tool-count"),
+        self.settings.postits.length
       ),
-      e(
-        n(".menuBaseContainerInfo .infoMenuPost span"),
-        i.settings.postits.length || "0"
+      updateToolCount(
+        $(".menuBaseContainerInfo .infoMenuDestaque span"),
+        self.settings.highlights.length || "0"
       ),
-      n(t).on("setHighlight", function (t, o) {
-        e(n("#bt-highlights-list .tool-count"), o.length),
-          e(n(".menuBaseContainerInfo .infoMenuDestaque span"), o.length || "0"),
-          n(this).trigger("gravaTool", {
+      updateToolCount(
+        $(".menuBaseContainerInfo .infoMenuPost span"),
+        self.settings.postits.length || "0"
+      ),
+      // Evento para atualização de Highlights
+      $(element).on("setHighlight", function (event, highlightsList) {
+        updateToolCount(
+          $("#bt-highlights-list .tool-count"),
+          highlightsList.length
+        ),
+          updateToolCount(
+            $(".menuBaseContainerInfo .infoMenuDestaque span"),
+            highlightsList.length || "0"
+          ),
+          $(this).trigger("gravaTool", {
             tool: "highlight",
-            val: o,
+            val: highlightsList,
           });
       }),
-      n(t).on("setPostit", function (t, o) {
-
-    
-        console.log("e", e);
-        console.log("total", o.length);
-
-        e(n("#bt-postits-list .tool-count"), o.length),
-          e(n(".menuBaseContainerInfo .infoMenuPost span"), o.length || "0"),
-          n(this).trigger("gravaTool", {
+      // Evento para atualização de Postits
+      $(element).on("setPostit", function (event, postitsList) {
+        updateToolCount($("#bt-postits-list .tool-count"), postitsList.length),
+          updateToolCount(
+            $(".menuBaseContainerInfo .infoMenuPost span"),
+            postitsList.length || "0"
+          ),
+          $(this).trigger("gravaTool", {
             tool: "postit",
-            val: o,
+            val: postitsList,
           });
-
       }),
-      n("[data-tool]").on("click", function () {
+      // Lógica de clique nos botões de ferramentas
+      $("[data-tool]").on("click", function () {
         $("body").trigger("closed-menu");
+        $(".hit-tools").toggleClass("hide");
 
-        var i = n(this).data("tool");
-        n("#tools-content .bt-tools-content").each(function (t, o) {
-          n(this).data("tool") != i
-            ? n(this).removeClass("tool-atual")
-            : n(this).toggleClass("tool-atual");
+        var toolName = $(this).data("tool");
+
+        // Alterna a classe 'tool-atual' nos botões
+        $("#tools-content .bt-tools-content").each(function (index, button) {
+          $(this).data("tool") != toolName
+            ? $(this).removeClass("tool-atual")
+            : $(this).toggleClass("tool-atual");
         }),
-          n("#tools-content")
+          // Alterna a classe 'inativo' no conteúdo das ferramentas
+          $("#tools-content")
             .find(".tools-content")
-            .each(function (t, o) {
-              n(this).data("tool") != i
-                ? n(this).addClass("inativo")
-                : n(this).toggleClass("inativo");
+            .each(function (index, content) {
+              $(this).data("tool") != toolName
+                ? $(this).addClass("inativo")
+                : $(this).toggleClass("inativo");
             });
       }),
-      n("#tools-content")
-        .find(".close-tools")
+      // Lógica para fechar o painel de ferramentas
+      $("#tools-content")
+        .find(".close-tools, .hit-tools")
         .on("click", function () {
-          n(n(this).data("button")).trigger("click");
+          $($(this).data("button")).trigger("click");
         });
-  }).prototype.setTelaAtual = function (t, o) {
-    this.id = t;
-    var i = n(this.element).find(".tela[data-id='" + t + "']");
-    n(this.element).highlights("setTelaAtual", t, i, o),
-      n(this.element).postits("setTelaAtual", t, i, o);
+      $(".hit-tools")
+        .on("click", function () {
+          $("body").trigger("closed-menu");
+          $(".hit-tools").addClass("hide");
+          $("#tools-content .bt-tools-content").removeClass("tool-atual");
+          $("#tools-content .tools-content").addClass("inativo");
+        });
+  }).prototype.setCurrentPage = function (pageId, pageElement) {
+    this.id = pageId;
+    var telaElement = $(this.element).find(".tela[data-id='" + pageId + "']");
+    $(this.element).highlights(
+      "setCurrentPage",
+      pageId,
+      telaElement,
+      pageElement
+    ),
+      $(this.element).postits(
+        "setCurrentPage",
+        pageId,
+        telaElement,
+        pageElement
+      );
   }),
-    (l.prototype.inserePostit = function () {
-      n(this.element).postits("inserePostit");
+    (ToolsManager.prototype.inserePostit = function () {
+      $(this.element).postits("inserePostit");
     }),
-    (l.prototype.habilitaHighlight = function () {
-      n(this.element).highlights("habilitaHighlight");
+    (ToolsManager.prototype.toggleHighlight = function () {
+      $(this.element).highlights("toggleHighlight");
     }),
-    (l.prototype.baixaPDF = function () {
-      n(this.element).PDF("download");
+    (ToolsManager.prototype.baixaPDF = function () {
+      $(this.element).PDF("download");
     }),
-    (l.prototype.setContrast = function () {
-      n("body").toggleClass("contraste");
+    (ToolsManager.prototype.setContrast = function () {
+      $("body").toggleClass("contraste");
     }),
-    (l.prototype.setFontSize = function () {
-      var t = (100 - this.settings.fontSize) / 4;
-      (this.fontSize += t),
+    (ToolsManager.prototype.setFontSize = function () {
+      var sizeChange = (100 - this.settings.fontSize) / 4;
+      (this.fontSize += sizeChange),
         115 < this.fontSize && (this.fontSize = this.settings.fontSize),
-        n("body").css("font-size", this.fontSize + "%");
+        $("body").css("font-size", this.fontSize + "%");
     }),
-    (n.fn.tools = function () {
+    // Plugin jQuery para inicializar o ToolsManager
+    ($.fn.tools = function () {
       for (
-        var t,
-          o = this,
-          i = arguments[0],
-          s = Array.prototype.slice.call(arguments, 1),
-          n = o.length,
-          e = 0;
-        e < n;
-        e++
+        var returnValue,
+          elements = this,
+          methodOrOptions = arguments[0],
+          args = Array.prototype.slice.call(arguments, 1),
+          numElements = elements.length,
+          i = 0;
+        i < numElements;
+        i++
       )
         if (
-          ("object" == typeof i || void 0 === i
-            ? (o[e].tools = new l(o[e], i))
-            : (t = o[e].tools[i].apply(o[e].tools, s)),
-          void 0 !== t)
+          ("object" == typeof methodOrOptions || void 0 === methodOrOptions
+            ? (elements[i].tools = new ToolsManager(
+                elements[i],
+                methodOrOptions
+              ))
+            : (returnValue = elements[i].tools[methodOrOptions].apply(
+                elements[i].tools,
+                args
+              )),
+          void 0 !== returnValue)
         )
-          return t;
-      return o;
+          return returnValue;
+      return elements;
     });
 });

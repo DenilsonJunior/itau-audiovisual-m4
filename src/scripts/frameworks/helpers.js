@@ -2,10 +2,10 @@ define([
   "jquery",
   "frameworks/jquery-ui.min",
   "components/utils",
-  "components/tools/postit.min",
-  "components/tools/highlight.min",
-  "components/tools/pdf.min",
-  "components/tools/toolcard.min",
+  "components/tools/postit",
+  "components/tools/highlight",
+  "components/tools/pdf",
+  "components/tools/toolcard",
   "frameworks/jquery.mCustomScrollbar.min",
 
 ], function (n, t, o) {
@@ -86,17 +86,17 @@ define([
         .on("click", function () {
           n(n(this).data("button")).trigger("click");
         });
-  }).prototype.setTelaAtual = function (t, o) {
+  }).prototype.setCurrentPage = function (t, o) {
     this.id = t;
     var i = n(this.element).find(".tela[data-id='" + t + "']");
-    n(this.element).highlights("setTelaAtual", t, i, o),
-      n(this.element).postits("setTelaAtual", t, i, o);
+    n(this.element).highlights("setCurrentPage", t, i, o),
+      n(this.element).postits("setCurrentPage", t, i, o);
   }),
     (l.prototype.inserePostit = function () {
       n(this.element).postits("inserePostit");
     }),
-    (l.prototype.habilitaHighlight = function () {
-      n(this.element).highlights("habilitaHighlight");
+    (l.prototype.toggleHighlight = function () {
+      n(this.element).highlights("toggleHighlight");
     }),
     (l.prototype.baixaPDF = function () {
       n(this.element).PDF("download");

@@ -1,4 +1,4 @@
-define(["jquery", "components/tools/toolcard.min"], function (n, t) {
+define(["jquery", "components/tools/toolcard"], function (n, t) {
   "use strict";
   var p = window.Postits || {};
   ((p = function (t, s) {
@@ -38,12 +38,12 @@ define(["jquery", "components/tools/toolcard.min"], function (n, t) {
         s = new e(s);
       s.inserePostit(),
         this.postits.postits.push(s),
-        this.criaCard(s),
+        this.createCard(s),
         n(s).on("setPostitData", function (t, s) {
           i.gravaPostits(s);
         });
     }),
-    (p.prototype.setTelaAtual = function (t, s, i) {
+    (p.prototype.setCurrentPage = function (t, s, i) {
       (this.pg = t), (this.telaAtual = s), (this.tituloAtual = i);
     }),
     (p.prototype.gravaPostits = function (t) {
@@ -71,7 +71,7 @@ define(["jquery", "components/tools/toolcard.min"], function (n, t) {
             }, 1e3),
         n(this.element).trigger("setPostit", [s]);
     }),
-    (p.prototype.criaCard = function (i) {
+    (p.prototype.createCard = function (i) {
       i.card ||
         ((i.card = new t({
           text: i.settings.message,

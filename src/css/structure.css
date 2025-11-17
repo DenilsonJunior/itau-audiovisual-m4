@@ -9448,6 +9448,14 @@ body.menu-ativo {
     overflow: hidden
 }
 
+#tools-content {
+    top: 0px;
+}
+
+#tools-content .tools-content {
+    top: 90px ;
+}
+
 #menuBase.ativo,
 #sumario.ativo,
 .ativo#progresso-aula,
@@ -9466,7 +9474,7 @@ body.menu-ativo {
     #sumario,
     #menuBase,
     #progresso-aula,
-    #tools-content {
+    #tools-content .tools-content {
         top: 100px
     }
 }
@@ -9475,7 +9483,7 @@ body.menu-ativo {
     .short-header #menuBase,
     .short-header #sumario,
     .short-header #progresso-aula,
-    .short-header #tools-content {
+    .short-header #tools-content .tools-content {
         top: 60px
     }
 }
@@ -14015,4 +14023,18 @@ a.required.link-required.clicou::after,
 
 .alto-contraste img {
     filter: brightness(120%) contrast(150%);
+}
+
+.hit-tools{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    pointer-events: auto;
+}
+
+.hide{
+    display: none;
 }

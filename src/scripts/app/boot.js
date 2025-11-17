@@ -24,7 +24,7 @@ requirejs.config({
     "components/audioPlayer": {
       deps: ["jquery"],
     },
-    "components/tools/postit.min": {
+    "components/tools/postit": {
       deps: [
         "jquery",
         "frameworks/jquery-ui.min",
@@ -32,14 +32,14 @@ requirejs.config({
         "frameworks/jquery.transform2d.min",
       ],
     },
-    "components/tools/highlight.min": {
+    "components/tools/highlight": {
       deps: [
         "jquery",
         "frameworks/jquery-ui.min",
         "frameworks/TextHighlighter.min",
       ],
     },
-    "components/tools/pdf.min": {
+    "components/tools/pdf": {
       deps: ["jquery"],
     },
     "frameworks/transit.min": {
@@ -53,10 +53,10 @@ requirejs.config({
         "jquery",
         "frameworks/jquery-ui.min",
         "components/utils",
-        "components/tools/postit.min",
-        "components/tools/highlight.min",
-        "components/tools/pdf.min",
-        "components/tools/toolcard.min",
+        "components/tools/postit",
+        "components/tools/highlight",
+        "components/tools/pdf",
+        "components/tools/toolcard",
         "frameworks/jquery.mCustomScrollbar.min",
       ],
     },

@@ -294,7 +294,7 @@ define([
               // t
               e.preventDefault(),
                 $(this).toggleClass("ativo"),
-                $("#content").tools("habilitaHighlight");
+                $("#content").tools("toggleHighlight");
             }),
             $("#PDF").on("click", function (e) {
               // t
@@ -312,11 +312,16 @@ define([
               $("#bt-sumario").trigger("click");
             }),
             $("#bt-menu").on("click", function () {
+              $("#marcaTexto").trigger("click");
               $("body").trigger("open-menu");
             }),
-            $(".close-menu, .menuBaseHit").on("click", function (e) {
-              $("body").trigger("closed-menu");
-            });
+            $(".close-menu, .menuBaseHit, .hit-tools").on(
+              "click",
+              function (e) {
+                $("body").trigger("closed-menu");
+              }
+            );
+
           $("#botao-topo").bind("click", function (e) {
             // t
             return (
@@ -392,7 +397,7 @@ define([
         // t
         (this.telaAtual = idTela),
           $("#content").tools(
-            "setTelaAtual",
+            "setCurrentPage",
             idTela,
             listaTelas[idTela].titulo
           ),

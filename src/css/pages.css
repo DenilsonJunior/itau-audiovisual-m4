@@ -115,7 +115,12 @@ p {
 #tela-4 h2 {
     font-weight: 600;
     color: #000;
-    margin-bottom: .5em;
+}
+
+#tela-4 h4 {
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1em;
 }
 
 #tela-4 .flexBox {
